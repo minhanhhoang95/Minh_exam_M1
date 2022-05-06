@@ -17,16 +17,33 @@
             // let a = Number(prompt("Enter the number a: "));
             // let b = Number(prompt("Enter the number b: "));
             // let c = Number(prompt("Enter the number c: "));
-            let delta = b * b - (4 * a * c);
-            if (delta < 0) {
-                document.write('The equation has no solution ');
-            } else if (delta == 0) {
-                document.write('The equation with double solution: ' - b / (2 * a));
-            } else {
-                let x1 = 0, x2 = 0;
-                x1 = (-b + Math.sqrt(delta) / (2 * a))
-                x2 = (-b - Math.sqrt(delta) / (2 * a))
-                document.write('The equation that distinguishes two solutions: ' + 'x1: ' + x1 + 'x2: ' + x2);
+            let Delta = b * b - 4 * a * c;
+            let x1 = (-b - Math.sqrt(Delta)) / (2 * a);
+            let x2 = (-b + Math.sqrt(Delta)) / (2 * a);
+            let x = (-b) / (2 * a);
+            if (a == 0) {
+                if (b == 0) {
+                    if (c == 0) {
+                        document.write('The equation has infinitely many solutions.');
+                    }
+                    else {
+                        document.write('The equation has no solution');
+                    }
+                }
+                else {
+                    document.write(`Equation with only solution: x= ${(-c) / b}`);
+                }
+            }
+            else {
+                if (Delta > 0) {
+                    document.write(`The equation that distinguishes two solutions : x1=${(-b + Math.sqrt(Delta)) / (2 * a)}; x2= ${(-b - Math.sqrt(Delta)) / (2 * a)}`);
+                }
+                else if (Delta == 0) {
+                    document.write(`The equation with double solution: x1=x2=${-b / (2 * a)}`);
+                }
+                else {
+                    document.write('The equation has no solution');
+                }
             }
         }
         quadratic();
