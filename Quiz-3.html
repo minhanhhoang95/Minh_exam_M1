@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 3</title>
+</head>
+
+<body>
+    <script>
+        function character_Count(arr) {
+            let count = 0;
+            let character = ["a", "o", "e", "u", "i"]
+            for (let i = 0; i < arr.length; i++) {
+                for (let j = 0; j < character.length; j++) {
+                    if (arr[i].toLowerCase() == character[j]) {
+                        count++;
+                    }
+                }
+            }
+            if (count != 0) {
+                return document.write(` Number of vowel characters : ${count}`);
+                // return alert(` Number of vowel characters : ${count}`) 
+            }
+            else {
+                return false;
+            }
+        }
+        let str = "Hoang Anh Minh";
+        // let str = prompt('Enter a string: ');
+        character_Count(str);
+
+    </script>
+</body>
+
+</html>

@@ -1,12 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bài 1</title>
 </head>
+
 <body>
-    
+    <script>
+        function quadratic() {
+            let a = 8,
+                b = 12,
+                c = -20;
+            // let a = Number(prompt("Enter the number a: "));
+            // let b = Number(prompt("Enter the number b: "));
+            // let c = Number(prompt("Enter the number c: "));
+            let delta = b * b - (4 * a * c);
+            if (delta < 0) {
+                document.write('The equation has no solution ');
+            } else if (delta == 0) {
+                document.write('The equation with double solution: ' - b / (2 * a));
+            } else {
+                let x1 = 0, x2 = 0;
+                x1 = (-b + Math.sqrt(delta) / (2 * a))
+                x2 = (-b - Math.sqrt(delta) / (2 * a))
+                document.write('The equation that distinguishes two solutions: ' + 'x1: ' + x1 + 'x2: ' + x2);
+            }
+        }
+        quadratic();
+    </script>
 </body>
+
 </html>
